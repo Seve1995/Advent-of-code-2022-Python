@@ -1,11 +1,11 @@
-def calc_points(input, output):
+def calc_points(opponent_hand, my_hand):
     dict_points = {'X': 1, 'Y': 2, 'Z': 3}
     dict_winning = {'A': 'Y', 'B': 'Z', 'C': 'X'}
     dict_drawing = {'A': 'X', 'B': 'Y', 'C': 'Z'}
-    score = 0 + dict_points[output]
-    if output == dict_drawing[input]:
+    score = 0 + dict_points[my_hand]
+    if my_hand == dict_drawing[opponent_hand]:
         score += 3
-    elif output == dict_winning[input]:
+    elif my_hand == dict_winning[opponent_hand]:
         score += 6
     else:
         score += 0
@@ -14,7 +14,7 @@ def calc_points(input, output):
 
 def print_solution(filename):
     points = 0
-    with open('resources/' + filename) as f:
+    with open(filename) as f:
         for line in f:
             line = line.strip()
             opponent_hand, my_hand = line.split(' ')

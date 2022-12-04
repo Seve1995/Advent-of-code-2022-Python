@@ -1,6 +1,6 @@
 def print_solution(filename):
     points = 0
-    with open('resources/' + filename) as f:
+    with open(filename) as f:
         for line in f:
             line = line.strip()
             first_half = set(line[:len(line) // 2])

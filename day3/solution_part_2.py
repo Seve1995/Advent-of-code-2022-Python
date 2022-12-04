@@ -1,7 +1,7 @@
 def print_solution(filename):
     points = 0
     line_count = 0
-    with open('resources/' + filename) as f:
+    with open(filename) as f:
         for line in f:
             curr_line_chars = set(line.strip())
             if line_count == 0:
